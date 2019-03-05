@@ -8,19 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		9912A12E2228B3B9006CA38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A12D2228B3B9006CA38D /* AppDelegate.swift */; };
-		9912A1302228B3B9006CA38D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A12F2228B3B9006CA38D /* ViewController.swift */; };
 		9912A1322228B3BA006CA38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9912A1312228B3BA006CA38D /* Assets.xcassets */; };
 		9912A1352228B3BA006CA38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9912A1332228B3BA006CA38D /* Main.storyboard */; };
+		9912A1412228B8F8006CA38D /* ToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1402228B8F8006CA38D /* ToolBarViewController.swift */; };
+		9912A1432228B908006CA38D /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1422228B908006CA38D /* ChannelViewController.swift */; };
+		9912A1452228B91A006CA38D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1442228B91A006CA38D /* ChatViewController.swift */; };
+		9912A1472228BA1E006CA38D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1462228BA1E006CA38D /* MainWindowController.swift */; };
+		9912A14A2228C781006CA38D /* Constatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1492228C781006CA38D /* Constatns.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9912A12A2228B3B9006CA38D /* DevSlopesSlack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevSlopesSlack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9912A12D2228B3B9006CA38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9912A12F2228B3B9006CA38D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9912A1312228B3BA006CA38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9912A1342228B3BA006CA38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9912A1362228B3BA006CA38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9912A1372228B3BA006CA38D /* DevSlopesSlack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevSlopesSlack.entitlements; sourceTree = "<group>"; };
+		9912A1402228B8F8006CA38D /* ToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarViewController.swift; sourceTree = "<group>"; };
+		9912A1422228B908006CA38D /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		9912A1442228B91A006CA38D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		9912A1462228BA1E006CA38D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		9912A1492228C781006CA38D /* Constatns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatns.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +61,50 @@
 		9912A12C2228B3B9006CA38D /* DevSlopesSlack */ = {
 			isa = PBXGroup;
 			children = (
+				9912A1482228C76F006CA38D /* Utilities */,
+				9912A13D2228B657006CA38D /* Model */,
+				9912A13E2228B664006CA38D /* View */,
+				9912A13F2228B671006CA38D /* Controller */,
 				9912A12D2228B3B9006CA38D /* AppDelegate.swift */,
-				9912A12F2228B3B9006CA38D /* ViewController.swift */,
 				9912A1312228B3BA006CA38D /* Assets.xcassets */,
 				9912A1332228B3BA006CA38D /* Main.storyboard */,
 				9912A1362228B3BA006CA38D /* Info.plist */,
 				9912A1372228B3BA006CA38D /* DevSlopesSlack.entitlements */,
 			);
 			path = DevSlopesSlack;
+			sourceTree = "<group>";
+		};
+		9912A13D2228B657006CA38D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9912A13E2228B664006CA38D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9912A13F2228B671006CA38D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9912A1402228B8F8006CA38D /* ToolBarViewController.swift */,
+				9912A1422228B908006CA38D /* ChannelViewController.swift */,
+				9912A1442228B91A006CA38D /* ChatViewController.swift */,
+				9912A1462228BA1E006CA38D /* MainWindowController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9912A1482228C76F006CA38D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9912A1492228C781006CA38D /* Constatns.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9912A1302228B3B9006CA38D /* ViewController.swift in Sources */,
+				9912A1412228B8F8006CA38D /* ToolBarViewController.swift in Sources */,
+				9912A1432228B908006CA38D /* ChannelViewController.swift in Sources */,
+				9912A14A2228C781006CA38D /* Constatns.swift in Sources */,
+				9912A1452228B91A006CA38D /* ChatViewController.swift in Sources */,
 				9912A12E2228B3B9006CA38D /* AppDelegate.swift in Sources */,
+				9912A1472228BA1E006CA38D /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
