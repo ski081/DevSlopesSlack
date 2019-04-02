@@ -9,11 +9,43 @@
 import Cocoa
 
 class ChatViewController: NSViewController {
-
+    @IBOutlet weak var channelTitle: NSTextField!
+    @IBOutlet weak var channelDescription: NSTextField!
+    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var typingUserLabel: NSTextField!
+    @IBOutlet weak var messageOutlineView: NSTextField!
+    @IBOutlet weak var messageText: NSTextFieldCell!
+    @IBOutlet weak var sendMessageButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        setupView()
+    }
+    
+    func setupView() {
         view.wantsLayer = true
-        view.layer?.backgroundColor = CGColor.white
+        view.layer?.backgroundColor = NSColor.init(named: NSColor.Name("bg-channel"))!.cgColor
+        
+        messageOutlineView.wantsLayer = true
+        messageOutlineView.layer?.backgroundColor = .white
+        messageOutlineView.layer?.borderColor = NSColor.controlHighlightColor.cgColor
+        messageOutlineView.layer?.borderWidth = 2
+        messageOutlineView.layer?.cornerRadius = 5
+        
+        sendMessageButton.styleButtonText(withName: "Send",
+                                          fontColor: .white,
+                                          alignment: .center,
+                                          font: avenirRegular,
+                                          size: 13.0)
+    }
+    
+    @IBAction func sendMessageButtonClicked(_ sender: NSButton) {
+        
     }
     
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -620,7 +620,7 @@
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -736,6 +736,9 @@
                                         </textFieldCell>
                                     </textField>
                                 </subviews>
+                                <gestureRecognizers>
+                                    <pressGestureRecognizer delaysPrimaryMouseButtonEvents="YES" id="wvi-d2-nRT"/>
+                                </gestureRecognizers>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
@@ -755,6 +758,11 @@
                             <constraint firstItem="qgv-8Z-oBB" firstAttribute="top" secondItem="0yo-8f-gQM" secondAttribute="bottom" constant="10" id="wbu-Ec-oyR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginImageView" destination="pUI-mY-JAH" id="Giz-Ym-zYK"/>
+                        <outlet property="loginLabel" destination="iZM-Ev-7xg" id="346-L7-k0F"/>
+                        <outlet property="loginStackView" destination="0yo-8f-gQM" id="OwI-h1-xE1"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -887,6 +895,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="addChannelClicked:" target="nDR-Pp-TUC" id="aye-fm-Nh0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -906,6 +917,11 @@
                             <constraint firstAttribute="trailing" secondItem="lpx-bO-9Jw" secondAttribute="trailing" constant="10" id="urP-V7-kAW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addChannelButton" destination="bF2-wM-aBT" id="HpH-oK-kZx"/>
+                        <outlet property="tableView" destination="ful-el-1IF" id="7lt-YU-ceH"/>
+                        <outlet property="userNameLabel" destination="Keb-xd-9Mm" id="9eV-OH-GRj"/>
+                    </connections>
                 </viewController>
                 <customObject id="TAs-VZ-T9H" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -920,7 +936,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A0D-p0-0G4">
-                                <rect key="frame" x="8" y="263" width="77" height="31"/>
+                                <rect key="frame" x="10" y="261" width="77" height="31"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="#general" id="f03-ql-5E1">
                                     <font key="font" size="18" name="AvenirNext-Regular"/>
                                     <color key="textColor" red="0.7843137255" green="0.85098039219999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -928,22 +944,21 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wUf-aS-O3B">
-                                <rect key="frame" x="91" y="266" width="177" height="23"/>
+                                <rect key="frame" x="93" y="264" width="177" height="23"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="This is where we do the chats" id="cdb-j2-6zU">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                     <color key="textColor" red="0.7843137255" green="0.85098039219999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At2-sz-IvR">
-                                <rect key="frame" x="0.0" y="120" width="450" height="135"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <clipView key="contentView" ambiguous="YES" id="O7V-mZ-zi1">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="135"/>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At2-sz-IvR">
+                                <rect key="frame" x="0.0" y="113" width="450" height="140"/>
+                                <clipView key="contentView" id="O7V-mZ-zi1">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="140"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="QI1-Lg-9aU">
-                                            <rect key="frame" x="0.0" y="0.0" width="450" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1013,13 +1028,16 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sendMessageButtonClicked:" target="23s-Oo-A6q" id="xhk-9a-CUb"/>
+                                </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ygA-Uq-Wwk">
                                 <rect key="frame" x="10" y="10" width="385" height="74"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="wa0-lq-mPk">
+                                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="wa0-lq-mPk">
                                         <rect key="frame" x="6" y="6" width="373" height="62"/>
-                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="WHV-Mh-fca">
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Message:" drawsBackground="YES" id="WHV-Mh-fca">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1042,15 +1060,30 @@
                             <constraint firstItem="wUf-aS-O3B" firstAttribute="leading" secondItem="A0D-p0-0G4" secondAttribute="trailing" constant="10" id="J3b-HK-0iS"/>
                             <constraint firstItem="2Ic-bC-sch" firstAttribute="centerY" secondItem="ygA-Uq-Wwk" secondAttribute="centerY" id="K2K-aw-vK8"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="reF-vP-AJ4" secondAttribute="trailing" constant="20" symbolic="YES" id="Lug-st-qtf"/>
+                            <constraint firstItem="reF-vP-AJ4" firstAttribute="top" secondItem="At2-sz-IvR" secondAttribute="bottom" constant="2" id="OSL-Fp-prg"/>
+                            <constraint firstAttribute="trailing" secondItem="At2-sz-IvR" secondAttribute="trailing" id="RDf-IX-IjS"/>
                             <constraint firstAttribute="bottom" secondItem="ygA-Uq-Wwk" secondAttribute="bottom" constant="10" id="Sxe-qd-qDE"/>
                             <constraint firstItem="reF-vP-AJ4" firstAttribute="leading" secondItem="wa0-lq-mPk" secondAttribute="leading" id="Yew-jQ-Sev"/>
-                            <constraint firstItem="A0D-p0-0G4" firstAttribute="top" secondItem="XNm-oM-MUb" secondAttribute="top" constant="6" id="avF-ag-cbg"/>
-                            <constraint firstItem="A0D-p0-0G4" firstAttribute="leading" secondItem="XNm-oM-MUb" secondAttribute="leading" constant="10" id="b2L-L5-Ka5"/>
+                            <constraint firstAttribute="trailing" secondItem="At2-sz-IvR" secondAttribute="trailing" id="ZdS-7F-WDe"/>
+                            <constraint firstItem="At2-sz-IvR" firstAttribute="leading" secondItem="XNm-oM-MUb" secondAttribute="leading" id="ZvK-P8-ZGN"/>
+                            <constraint firstItem="A0D-p0-0G4" firstAttribute="top" secondItem="XNm-oM-MUb" secondAttribute="top" constant="8" id="avF-ag-cbg"/>
+                            <constraint firstItem="A0D-p0-0G4" firstAttribute="leading" secondItem="XNm-oM-MUb" secondAttribute="leading" constant="12" id="b2L-L5-Ka5"/>
                             <constraint firstItem="ygA-Uq-Wwk" firstAttribute="top" secondItem="reF-vP-AJ4" secondAttribute="bottom" constant="4" id="bum-nT-KQn"/>
                             <constraint firstAttribute="trailing" secondItem="2Ic-bC-sch" secondAttribute="trailing" constant="10" id="jIJ-ee-MrC"/>
+                            <constraint firstItem="At2-sz-IvR" firstAttribute="leading" secondItem="XNm-oM-MUb" secondAttribute="leading" id="scv-4n-2Gw"/>
+                            <constraint firstItem="At2-sz-IvR" firstAttribute="top" secondItem="A0D-p0-0G4" secondAttribute="bottom" constant="8" id="u6U-Fp-HfU"/>
                             <constraint firstItem="2Ic-bC-sch" firstAttribute="leading" secondItem="ygA-Uq-Wwk" secondAttribute="trailing" constant="10" id="uIU-OU-VYf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="channelDescription" destination="wUf-aS-O3B" id="gCh-My-zCE"/>
+                        <outlet property="channelTitle" destination="A0D-p0-0G4" id="h3g-PG-keF"/>
+                        <outlet property="messageOutlineView" destination="wa0-lq-mPk" id="F3w-eO-m2w"/>
+                        <outlet property="messageText" destination="WHV-Mh-fca" id="CJ6-dX-2cm"/>
+                        <outlet property="sendMessageButton" destination="2Ic-bC-sch" id="8l2-co-PWa"/>
+                        <outlet property="tableView" destination="QI1-Lg-9aU" id="YS9-8A-7FI"/>
+                        <outlet property="typingUserLabel" destination="reF-vP-AJ4" id="cZW-HT-HJK"/>
+                    </connections>
                 </viewController>
                 <customObject id="zLK-Tw-XpF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

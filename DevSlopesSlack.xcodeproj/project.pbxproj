@@ -14,7 +14,13 @@
 		9912A1432228B908006CA38D /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1422228B908006CA38D /* ChannelViewController.swift */; };
 		9912A1452228B91A006CA38D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1442228B91A006CA38D /* ChatViewController.swift */; };
 		9912A1472228BA1E006CA38D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1462228BA1E006CA38D /* MainWindowController.swift */; };
-		9912A14A2228C781006CA38D /* Constatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1492228C781006CA38D /* Constatns.swift */; };
+		9912A14A2228C781006CA38D /* Consants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A1492228C781006CA38D /* Consants.swift */; };
+		99A86B8C224FA938007048C0 /* ModalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A86B8B224FA938007048C0 /* ModalType.swift */; };
+		99A86B8E224FA9D9007048C0 /* NotificationName+Custrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A86B8D224FA9D9007048C0 /* NotificationName+Custrom.swift */; };
+		99A86B90224FAEA1007048C0 /* ClickBlockingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A86B8F224FAEA1007048C0 /* ClickBlockingView.swift */; };
+		99A86B9322505FB7007048C0 /* ModalLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99A86B9222505FB7007048C0 /* ModalLogin.xib */; };
+		99A86B9522506078007048C0 /* ModalLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A86B9422506078007048C0 /* ModalLogin.swift */; };
+		99D1BC2A224EDD6200A67A65 /* NSButton+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D1BC29224EDD6100A67A65 /* NSButton+Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +34,13 @@
 		9912A1422228B908006CA38D /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		9912A1442228B91A006CA38D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9912A1462228BA1E006CA38D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		9912A1492228C781006CA38D /* Constatns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatns.swift; sourceTree = "<group>"; };
+		9912A1492228C781006CA38D /* Consants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consants.swift; sourceTree = "<group>"; };
+		99A86B8B224FA938007048C0 /* ModalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalType.swift; sourceTree = "<group>"; };
+		99A86B8D224FA9D9007048C0 /* NotificationName+Custrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Custrom.swift"; sourceTree = "<group>"; };
+		99A86B8F224FAEA1007048C0 /* ClickBlockingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickBlockingView.swift; sourceTree = "<group>"; };
+		99A86B9222505FB7007048C0 /* ModalLogin.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalLogin.xib; sourceTree = "<group>"; };
+		99A86B9422506078007048C0 /* ModalLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLogin.swift; sourceTree = "<group>"; };
+		99D1BC29224EDD6100A67A65 /* NSButton+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+Colors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,15 +73,19 @@
 		9912A12C2228B3B9006CA38D /* DevSlopesSlack */ = {
 			isa = PBXGroup;
 			children = (
+				99A86B9122505F95007048C0 /* Xib */,
 				9912A1482228C76F006CA38D /* Utilities */,
 				9912A13D2228B657006CA38D /* Model */,
 				9912A13E2228B664006CA38D /* View */,
 				9912A13F2228B671006CA38D /* Controller */,
 				9912A12D2228B3B9006CA38D /* AppDelegate.swift */,
+				99D1BC29224EDD6100A67A65 /* NSButton+Colors.swift */,
 				9912A1312228B3BA006CA38D /* Assets.xcassets */,
 				9912A1332228B3BA006CA38D /* Main.storyboard */,
+				99A86B8B224FA938007048C0 /* ModalType.swift */,
 				9912A1362228B3BA006CA38D /* Info.plist */,
 				9912A1372228B3BA006CA38D /* DevSlopesSlack.entitlements */,
+				99A86B8D224FA9D9007048C0 /* NotificationName+Custrom.swift */,
 			);
 			path = DevSlopesSlack;
 			sourceTree = "<group>";
@@ -84,6 +100,8 @@
 		9912A13E2228B664006CA38D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				99A86B8F224FAEA1007048C0 /* ClickBlockingView.swift */,
+				99A86B9422506078007048C0 /* ModalLogin.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,9 +120,17 @@
 		9912A1482228C76F006CA38D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				9912A1492228C781006CA38D /* Constatns.swift */,
+				9912A1492228C781006CA38D /* Consants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		99A86B9122505F95007048C0 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				99A86B9222505FB7007048C0 /* ModalLogin.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +165,7 @@
 				TargetAttributes = {
 					9912A1292228B3B9006CA38D = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -166,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9912A1322228B3BA006CA38D /* Assets.xcassets in Resources */,
+				99A86B9322505FB7007048C0 /* ModalLogin.xib in Resources */,
 				9912A1352228B3BA006CA38D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,10 +206,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9912A1412228B8F8006CA38D /* ToolBarViewController.swift in Sources */,
+				99A86B8C224FA938007048C0 /* ModalType.swift in Sources */,
 				9912A1432228B908006CA38D /* ChannelViewController.swift in Sources */,
-				9912A14A2228C781006CA38D /* Constatns.swift in Sources */,
+				99A86B9522506078007048C0 /* ModalLogin.swift in Sources */,
+				9912A14A2228C781006CA38D /* Consants.swift in Sources */,
+				99D1BC2A224EDD6200A67A65 /* NSButton+Colors.swift in Sources */,
 				9912A1452228B91A006CA38D /* ChatViewController.swift in Sources */,
 				9912A12E2228B3B9006CA38D /* AppDelegate.swift in Sources */,
+				99A86B8E224FA9D9007048C0 /* NotificationName+Custrom.swift in Sources */,
+				99A86B90224FAEA1007048C0 /* ClickBlockingView.swift in Sources */,
 				9912A1472228BA1E006CA38D /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,7 +363,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobstruzsoftware.DevSlopesSlack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -349,7 +382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobstruzsoftware.DevSlopesSlack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

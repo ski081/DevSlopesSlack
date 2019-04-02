@@ -17,3 +17,7 @@ let chatGreen = NSColor(calibratedRed: 0.22,
                         green: 0.66,
                         blue: 0.68,
                         alpha: 1.0)
+let avenirRegular = "AvenirNext-Regular"
+let avenirBold = "AvenirNext-Bold"
+
+let userInfoModal = "modalUserInfo"
