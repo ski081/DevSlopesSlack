@@ -10,13 +10,17 @@ import Cocoa
 
 class ModalLogin: NSView {
     @IBOutlet weak var view: NSView!
+    @IBOutlet weak var userNameTextField: NSTextField!
+    @IBOutlet weak var passwordTextField: NSSecureTextField!
+    @IBOutlet weak var loginButton: NSButton!
+    @IBOutlet weak var createAccountButton: NSButton!
+    @IBOutlet weak var stackView: NSStackView!
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         Bundle.main.loadNibNamed(NSNib.Name("ModalLogin"),
                                  owner: self,
                                  topLevelObjects: nil)
-        self.view.frame = NSRect(x: 0, y: 0, width: 475, height: 300)
         self.addSubview(self.view)
     }
     
@@ -29,10 +33,41 @@ class ModalLogin: NSView {
         setupView()
     }
     
+    @IBAction func closeModalButtonClicked(_ sender: NSButton) {
+    
+    }
+    
+    @IBAction func loginButtonClicked(_ sender: NSButton) {
+    
+    }
+    
+    @IBAction func createAccountButtonClicked(_ sender: NSButton) {
+    
+    }
+    
+    
     func setupView() {
+        self.view.frame = NSRect(x: 0,
+                                 y: 0,
+                                 width: 475,
+                                 height: 300)
         view.wantsLayer = true
-        view.layer?.backgroundColor = CGColor.white
+        view.layer?.backgroundColor = NSColor.init(named: NSColor.Name("bg-modal-form"))!.cgColor
         view.layer?.cornerRadius = 7
+        
+        loginButton.layer?.backgroundColor = NSColor.init(named: NSColor.Name("bg-channel"))!.cgColor
+        loginButton.layer?.cornerRadius = 7
+        loginButton.styleButtonText(withName: "Login",
+                                    fontColor: .white,
+                                    alignment: .center,
+                                    font: avenirRegular,
+                                    size: 14.0)
+        createAccountButton.styleButtonText(withName: "Create Account",
+                                            fontColor: chatGreen,
+                                            alignment: .center,
+                                            font: avenirRegular,
+                                            size: 12.0)
+
     }
     
 }
