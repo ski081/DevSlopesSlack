@@ -34,7 +34,8 @@ class ModalLogin: NSView {
     }
     
     @IBAction func closeModalButtonClicked(_ sender: NSButton) {
-    
+        NotificationCenter.default.post(name: Notification.Name.closeModal,
+                                        object: nil)
     }
     
     @IBAction func loginButtonClicked(_ sender: NSButton) {
@@ -42,7 +43,13 @@ class ModalLogin: NSView {
     }
     
     @IBAction func createAccountButtonClicked(_ sender: NSButton) {
-    
+        let userInfo: [String: Bool] = [
+            removeModalImmediately: true
+        ]
+        
+        NotificationCenter.default.post(name: Notification.Name.closeModal,
+                                        object: nil,
+                                        userInfo: userInfo)
     }
     
     

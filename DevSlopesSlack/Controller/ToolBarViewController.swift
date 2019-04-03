@@ -26,10 +26,13 @@ class ToolBarViewController: NSViewController {
     }
     
     func setupView() {
-        let notificationName = Notification.Name.presentModal
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(presentModal(_:)),
-                                               name: notificationName,
+                                               name: Notification.Name.presentModal,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(closeModalNotification(_:)),
+                                               name: Notification.Name.closeModal,
                                                object: nil)
         view.wantsLayer = true
         view.layer?.backgroundColor = chatGreen.cgColor
@@ -154,21 +157,34 @@ class ToolBarViewController: NSViewController {
         closeModal()
     }
     
-    func closeModal() {
-        NSAnimationContext.runAnimationGroup({ context in
-            context.duration = 0.5
-            modalBGView.animator().alphaValue = 0.0
-            modalView.animator().alphaValue = 0.0
-            self.view.layoutSubtreeIfNeeded()
-        }) {
-            if self.modalBGView != nil {
-                self.modalBGView.removeFromSuperview()
-                self.modalBGView = nil
-            }
-            
-            if self.modalView != nil {
-                self.modalView.removeFromSuperview()
-                self.modalView = nil
+    @objc
+    func closeModalNotification(_ notification: Notification) {
+        if let removeImmediately = notification.userInfo?[removeModalImmediately] as? Bool {
+            closeModal(removeImmediately)
+        } else {
+            closeModal()
+        }
+    }
+    
+    func closeModal(_ removeImmediately: Bool = false) {
+        if removeImmediately {
+            modalView.removeFromSuperview()
+        } else {
+            NSAnimationContext.runAnimationGroup({ context in
+                context.duration = 0.5
+                modalBGView.animator().alphaValue = 0.0
+                modalView.animator().alphaValue = 0.0
+                self.view.layoutSubtreeIfNeeded()
+            }) {
+                if self.modalBGView != nil {
+                    self.modalBGView.removeFromSuperview()
+                    self.modalBGView = nil
+                }
+                
+                if self.modalView != nil {
+                    self.modalView.removeFromSuperview()
+                    self.modalView = nil
+                }
             }
         }
     }
