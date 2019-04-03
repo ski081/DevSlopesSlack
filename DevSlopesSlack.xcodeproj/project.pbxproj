@@ -20,6 +20,8 @@
 		99A86B90224FAEA1007048C0 /* ClickBlockingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A86B8F224FAEA1007048C0 /* ClickBlockingView.swift */; };
 		99A86B9322505FB7007048C0 /* ModalLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99A86B9222505FB7007048C0 /* ModalLogin.xib */; };
 		99A86B9522506078007048C0 /* ModalLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A86B9422506078007048C0 /* ModalLogin.swift */; };
+		99A86B9722544C34007048C0 /* ModalCreateAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99A86B9622544C34007048C0 /* ModalCreateAccount.xib */; };
+		99A86B9922544C56007048C0 /* ModalCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A86B9822544C56007048C0 /* ModalCreateAccount.swift */; };
 		99D1BC2A224EDD6200A67A65 /* NSButton+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D1BC29224EDD6100A67A65 /* NSButton+Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		99A86B8F224FAEA1007048C0 /* ClickBlockingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickBlockingView.swift; sourceTree = "<group>"; };
 		99A86B9222505FB7007048C0 /* ModalLogin.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalLogin.xib; sourceTree = "<group>"; };
 		99A86B9422506078007048C0 /* ModalLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLogin.swift; sourceTree = "<group>"; };
+		99A86B9622544C34007048C0 /* ModalCreateAccount.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalCreateAccount.xib; sourceTree = "<group>"; };
+		99A86B9822544C56007048C0 /* ModalCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalCreateAccount.swift; sourceTree = "<group>"; };
 		99D1BC29224EDD6100A67A65 /* NSButton+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+Colors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +106,7 @@
 			children = (
 				99A86B8F224FAEA1007048C0 /* ClickBlockingView.swift */,
 				99A86B9422506078007048C0 /* ModalLogin.swift */,
+				99A86B9822544C56007048C0 /* ModalCreateAccount.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				99A86B9222505FB7007048C0 /* ModalLogin.xib */,
+				99A86B9622544C34007048C0 /* ModalCreateAccount.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9912A1322228B3BA006CA38D /* Assets.xcassets in Resources */,
+				99A86B9722544C34007048C0 /* ModalCreateAccount.xib in Resources */,
 				99A86B9322505FB7007048C0 /* ModalLogin.xib in Resources */,
 				9912A1352228B3BA006CA38D /* Main.storyboard in Resources */,
 			);
@@ -214,6 +221,7 @@
 				9912A1452228B91A006CA38D /* ChatViewController.swift in Sources */,
 				9912A12E2228B3B9006CA38D /* AppDelegate.swift in Sources */,
 				99A86B8E224FA9D9007048C0 /* NotificationName+Custom.swift in Sources */,
+				99A86B9922544C56007048C0 /* ModalCreateAccount.swift in Sources */,
 				99A86B90224FAEA1007048C0 /* ClickBlockingView.swift in Sources */,
 				9912A1472228BA1E006CA38D /* MainWindowController.swift in Sources */,
 			);

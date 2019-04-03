@@ -109,40 +109,44 @@ class ToolBarViewController: NSViewController {
             let closeBackgroundClickGestureRecognizer = NSClickGestureRecognizer(target: self,
                                                                                  action: #selector(closeModalClick(_:)))
             modalBGView.addGestureRecognizer(closeBackgroundClickGestureRecognizer)
-            
-            guard let modalType = notification.userInfo?[userInfoModal] as? ModalType else {
-                return
-            }
-            
-            switch modalType {
-            case .login:
-                modalView = ModalLogin()
-                modalWidth = 475
-                modalHeight = 300
-            }
-            
-            modalView.wantsLayer = true
-            modalView.translatesAutoresizingMaskIntoConstraints = false
-            modalView.alphaValue = 0
-            
-            view.addSubview(modalView,
-                            positioned: .above,
-                            relativeTo: modalBGView)
-            
-            let horizontalContraint = modalView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-            let verticalContraint = modalView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            let widthConstraint = modalView.widthAnchor.constraint(equalToConstant: modalWidth)
-            let heightConstraint = modalView.heightAnchor.constraint(equalToConstant: modalHeight)
-            
-            let modalConstraints = [
-                horizontalContraint,
-                verticalContraint,
-                widthConstraint,
-                heightConstraint
-            ]
-            
-            NSLayoutConstraint.activate(modalConstraints)
         }
+        
+        guard let modalType = notification.userInfo?[userInfoModal] as? ModalType else {
+            return
+        }
+        
+        switch modalType {
+        case .login:
+            modalView = ModalLogin()
+            modalWidth = 475
+            modalHeight = 300
+        case .createAccount:
+            modalView = ModalCreateAccount()
+            modalWidth = 475
+            modalHeight = 300
+        }
+        
+        modalView.wantsLayer = true
+        modalView.translatesAutoresizingMaskIntoConstraints = false
+        modalView.alphaValue = 0
+        
+        view.addSubview(modalView,
+                        positioned: .above,
+                        relativeTo: modalBGView)
+        
+        let horizontalContraint = modalView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let verticalContraint = modalView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        let widthConstraint = modalView.widthAnchor.constraint(equalToConstant: modalWidth)
+        let heightConstraint = modalView.heightAnchor.constraint(equalToConstant: modalHeight)
+        
+        let modalConstraints = [
+            horizontalContraint,
+            verticalContraint,
+            widthConstraint,
+            heightConstraint
+        ]
+        
+        NSLayoutConstraint.activate(modalConstraints)
         
         NSAnimationContext.runAnimationGroup { context in
             context.duration = 0.5
@@ -160,7 +164,7 @@ class ToolBarViewController: NSViewController {
     @objc
     func closeModalNotification(_ notification: Notification) {
         if let removeImmediately = notification.userInfo?[removeModalImmediately] as? Bool {
-            closeModal(removeImmediately)
+            closeModal(removeImmediately) 
         } else {
             closeModal()
         }

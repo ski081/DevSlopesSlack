@@ -50,6 +50,13 @@ class ModalLogin: NSView {
         NotificationCenter.default.post(name: Notification.Name.closeModal,
                                         object: nil,
                                         userInfo: userInfo)
+        let userInfoCreateAccount: [String: ModalType] = [
+            userInfoModal: .createAccount
+        ]
+        
+        NotificationCenter.default.post(name: Notification.Name.presentModal,
+                                        object: nil,
+                                        userInfo: userInfoCreateAccount)
     }
     
     
