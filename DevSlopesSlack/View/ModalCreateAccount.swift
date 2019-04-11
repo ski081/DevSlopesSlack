@@ -10,6 +10,14 @@ import Cocoa
 
 class ModalCreateAccount: NSView {
     @IBOutlet weak var view: NSView!
+    @IBOutlet weak var nameTextField: NSTextField!
+    @IBOutlet weak var emailTextField: NSTextField!
+    @IBOutlet weak var passwordTextField: NSSecureTextField!
+    @IBOutlet weak var profileImageView: NSImageView!
+    @IBOutlet weak var createAccountButton: NSButton!
+    @IBOutlet weak var chooseImageButton: NSButton!
+    @IBOutlet weak var progressSpinner: NSProgressIndicator!
+    @IBOutlet weak var stackView: NSStackView!
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -36,5 +44,42 @@ class ModalCreateAccount: NSView {
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.init(named: NSColor.Name("bg-modal-form"))!.cgColor
         view.layer?.cornerRadius = 7
+        
+        profileImageView.layer?.cornerRadius = 10
+        profileImageView.layer?.borderColor = NSColor.gray.cgColor
+        profileImageView.layer?.borderWidth = 3
+        
+        createAccountButton.styleButtonText(withName: "Create Account",
+                                            fontColor: .white,
+                                            alignment: .center,
+                                            font: avenirRegular,
+                                            size: 13.0)
+        chooseImageButton.styleButtonText(withName: "Choose Image",
+                                          fontColor: .white,
+                                          alignment: .center,
+                                          font: avenirRegular,
+                                          size: 13.0)
+        createAccountButton.layer?.backgroundColor = chatGreen.cgColor
+        createAccountButton.layer?.cornerRadius = 7
+        
+        chooseImageButton.layer?.backgroundColor = chatGreen.cgColor
+        chooseImageButton.layer?.cornerRadius = 7
+        
+        nameTextField.focusRingType = .none
+        emailTextField.focusRingType = .none
+        passwordTextField.focusRingType = .none
     }
+    
+    @IBAction func closeButtonClicked(_ sender: NSButton) {
+        NotificationCenter.default.post(name: Notification.Name.closeModal,
+                                        object: nil)
+    }
+    
+    @IBAction func createAccountButtonClicked(_ sender: NSButton) {
+    }
+    
+    @IBAction func chooseImageButtonClicked(_ sender: NSButton) {
+    }
+    
+    
 }

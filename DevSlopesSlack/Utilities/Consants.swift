@@ -9,6 +9,12 @@
 import Foundation
 import Cocoa
 
+typealias CompletionHandler = (Bool) -> Void
+
+let baseURL = "https://slack-clone-ski081.herokuapp.com/v1/"
+let urlRegister = "\(baseURL)account/register"
+let urlLogin = "\(baseURL)account/login"
+
 let chatPurple = NSColor(calibratedRed: 0.30,
                          green: 0.22,
                          blue: 0.29,
@@ -21,3 +27,7 @@ let avenirRegular = "AvenirNext-Regular"
 let avenirBold = "AvenirNext-Bold"
 let userInfoModal = "modalUserInfo"
 let removeModalImmediately = "modalRemoveImmediately"
+let tokenKey = "token"
+let loggedInKey = "loggedIn"
+let userEmailKey = "userEmail"
+
