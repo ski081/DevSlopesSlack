@@ -76,6 +76,19 @@ class ModalCreateAccount: NSView {
     }
     
     @IBAction func createAccountButtonClicked(_ sender: NSButton) {
+        let email = emailTextField.stringValue
+        let password = passwordTextField.stringValue
+        
+        AuthService.instance.registerUser(email: email,
+                                          password: password) { success in
+                                            if success {
+                                                AuthService.instance.createUser(name: self.nameTextField.stringValue, email: email, avatarName: "dark5", avatarColor: "", completion: { success in
+                                                    let name = Notification.Name.closeModal
+                                                    NotificationCenter.default.post(name: name,
+                                                                                    object: nil)
+                                                })
+                                            }
+        }
     }
     
     @IBAction func chooseImageButtonClicked(_ sender: NSButton) {

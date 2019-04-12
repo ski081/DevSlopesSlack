@@ -51,12 +51,12 @@ public protocol SocketLogger : AnyObject {
 public extension SocketLogger {
     /// Default implementation.
     func log(_ message: @autoclosure () -> String, type: String) {
-        abstractLog("LOG", message: message, type: type)
+        abstractLog("LOG", message: message(), type: type)
     }
 
     /// Default implementation.
     func error(_ message: @autoclosure () -> String, type: String) {
-        abstractLog("ERROR", message: message, type: type)
+        abstractLog("ERROR", message: message(), type: type)
     }
 
     private func abstractLog(_ logType: String, message: @autoclosure () -> String, type: String) {

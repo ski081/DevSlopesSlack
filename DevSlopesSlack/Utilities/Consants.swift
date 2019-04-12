@@ -14,6 +14,7 @@ typealias CompletionHandler = (Bool) -> Void
 let baseURL = "https://slack-clone-ski081.herokuapp.com/v1/"
 let urlRegister = "\(baseURL)account/register"
 let urlLogin = "\(baseURL)account/login"
+let urlUserAdd = "\(baseURL)user/add"
 
 let chatPurple = NSColor(calibratedRed: 0.30,
                          green: 0.22,
@@ -30,4 +31,8 @@ let removeModalImmediately = "modalRemoveImmediately"
 let tokenKey = "token"
 let loggedInKey = "loggedIn"
 let userEmailKey = "userEmail"
+
+let serviceHeaders = [
+    "Content-Type": "application/json; charset=utf-8"
+]
 

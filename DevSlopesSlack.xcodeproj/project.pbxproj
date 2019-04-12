@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9901E4C8225C340D004752E8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901E4C7225C340D004752E8 /* AuthService.swift */; };
+		9901E4CA22600A51004752E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901E4C922600A51004752E8 /* User.swift */; };
+		9901E4CC22602343004752E8 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901E4CB22602343004752E8 /* UserDataService.swift */; };
+		9901E4CE2260277A004752E8 /* SlackUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901E4CD2260277A004752E8 /* SlackUser.swift */; };
 		9912A12E2228B3B9006CA38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A12D2228B3B9006CA38D /* AppDelegate.swift */; };
 		9912A1322228B3BA006CA38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9912A1312228B3BA006CA38D /* Assets.xcassets */; };
 		9912A1352228B3BA006CA38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9912A1332228B3BA006CA38D /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 		1A6FEE27DDC6FFDED675CDBA /* Pods-DevSlopesSlack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevSlopesSlack.debug.xcconfig"; path = "Target Support Files/Pods-DevSlopesSlack/Pods-DevSlopesSlack.debug.xcconfig"; sourceTree = "<group>"; };
 		79A13CDAFD1A8474E3D95AC1 /* Pods_DevSlopesSlack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevSlopesSlack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9901E4C7225C340D004752E8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		9901E4C922600A51004752E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9901E4CB22602343004752E8 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		9901E4CD2260277A004752E8 /* SlackUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUser.swift; sourceTree = "<group>"; };
 		9912A12A2228B3B9006CA38D /* DevSlopesSlack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevSlopesSlack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9912A12D2228B3B9006CA38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9912A1312228B3BA006CA38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				9901E4C7225C340D004752E8 /* AuthService.swift */,
+				9901E4CB22602343004752E8 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -115,6 +122,8 @@
 		9912A13D2228B657006CA38D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9901E4C922600A51004752E8 /* User.swift */,
+				9901E4CD2260277A004752E8 /* SlackUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +317,9 @@
 				99A86B9522506078007048C0 /* ModalLogin.swift in Sources */,
 				9912A14A2228C781006CA38D /* Consants.swift in Sources */,
 				99D1BC2A224EDD6200A67A65 /* NSButton+Colors.swift in Sources */,
+				9901E4CC22602343004752E8 /* UserDataService.swift in Sources */,
+				9901E4CE2260277A004752E8 /* SlackUser.swift in Sources */,
+				9901E4CA22600A51004752E8 /* User.swift in Sources */,
 				9901E4C8225C340D004752E8 /* AuthService.swift in Sources */,
 				9912A1452228B91A006CA38D /* ChatViewController.swift in Sources */,
 				9912A12E2228B3B9006CA38D /* AppDelegate.swift in Sources */,
