@@ -69,11 +69,10 @@ class ModalLogin: NSView {
     func getUserInfo() {
         AuthService.instance.findUser { success in
             if success {
-                let name = Notification.Name.closeModal
-                NotificationCenter.default.post(name: name,
+                NotificationCenter.default.post(name: Notification.Name.closeModal,
                                                 object: nil)
-                Swift.print(UserDataService.instance.name)
-                Swift.print(UserDataService.instance.avatarName)
+                NotificationCenter.default.post(name: Notification.Name.userDataChanged,
+                                                object: nil)
             } else {
                 Swift.print("Get user info error")
             }

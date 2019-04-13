@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
     static let presentModal = Notification.Name(rawValue: "presentModal")
     static let closeModal = Notification.Name(rawValue: "closeModal")
+    static let userDataChanged = Notification.Name(rawValue: "userDataChanged")
 }

@@ -17,6 +17,11 @@ class ChannelViewController: NSViewController {
         super.viewDidLoad()
         view.wantsLayer = true
         view.layer?.backgroundColor = chatPurple.cgColor
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(userDataDidChange(_:)),
+                                               name: Notification.Name.userDataChanged,
+                                               object: nil)
     }
     
     override func viewWillAppear() {
@@ -39,4 +44,12 @@ class ChannelViewController: NSViewController {
         
     }
     
+    @objc
+    func userDataDidChange(_ notification: Notification) {
+        if AuthService.instance.isLoggedIn {
+            userNameLabel.stringValue = UserDataService.instance.name
+        } else {
+            userNameLabel.stringValue = "<Not Logged In>"
+        }
+    }
 }

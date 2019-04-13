@@ -19,6 +19,10 @@ class ChatViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(userDataDidChange(_:)),
+                                               name: Notification.Name.userDataChanged,
+                                               object: nil)
 
     }
     
@@ -48,4 +52,12 @@ class ChatViewController: NSViewController {
         
     }
     
+    @objc
+    func userDataDidChange(_ notification: Notification) {
+        if AuthService.instance.isLoggedIn {
+        } else {
+
+        }
+    }
+
 }

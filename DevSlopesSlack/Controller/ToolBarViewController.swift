@@ -18,6 +18,11 @@ class ToolBarViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(userDataDidChange(_:)),
+                                               name: Notification.Name.userDataChanged,
+                                               object: nil)
+
     }
 
     override func viewWillAppear() {
@@ -190,6 +195,24 @@ class ToolBarViewController: NSViewController {
                     self.modalView = nil
                 }
             }
+        }
+    }
+
+    @objc
+    func userDataDidChange(_ notification: Notification) {
+        loginImageView.wantsLayer = true
+
+        if AuthService.instance.isLoggedIn {
+            loginLabel.stringValue = UserDataService.instance.name
+            loginImageView.layer?.cornerRadius = 5
+            loginImageView.layer?.borderColor = NSColor.white.cgColor
+            loginImageView.layer?.borderWidth = 1
+            loginImageView.image = NSImage(named: NSImage.Name("boom"))
+        } else {
+            loginLabel.stringValue = "<Not Logged In>"
+            loginImageView.layer?.borderColor = NSColor.clear.cgColor
+            loginImageView.layer?.borderWidth = 0
+            loginImageView.image = NSImage(named: NSImage.Name("icon-profile-default"))
         }
     }
 
