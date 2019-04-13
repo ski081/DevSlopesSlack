@@ -82,17 +82,44 @@ class ModalCreateAccount: NSView {
         AuthService.instance.registerUser(email: email,
                                           password: password) { success in
                                             if success {
-                                                AuthService.instance.createUser(name: self.nameTextField.stringValue, email: email, avatarName: "dark5", avatarColor: "", completion: { success in
-                                                    let name = Notification.Name.closeModal
-                                                    NotificationCenter.default.post(name: name,
-                                                                                    object: nil)
-                                                })
+                                                self.loginUser(for: email,
+                                                               password: password)
+                                            } else {
+                                                print("error")
                                             }
         }
     }
     
     @IBAction func chooseImageButtonClicked(_ sender: NSButton) {
+
     }
     
+    func loginUser(for email: String, password: String) {
+        AuthService.instance.loginUser(email: email, password: password) { success in
+            if success {
+                self.createUser(for: email,
+                                password: password)
+            } else {
+                print("error")
+            }
+
+        }
+    }
     
+    func createUser(for email: String, password: String) {
+        let name = self.nameTextField.stringValue
+        let avatarName = ""
+        AuthService.instance.createUser(name: name,
+                                        email: email,
+                                        avatarName: avatarName,
+                                        avatarColor: "") { success in
+                                            if success {
+                                                let name = Notification.Name.closeModal
+                                                NotificationCenter.default.post(name: name,
+                                                                                object: nil)
+                                            } else {
+                                                print("error")
+                                            }
+        }
+    }
 }
