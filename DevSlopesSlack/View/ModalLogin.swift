@@ -42,11 +42,9 @@ class ModalLogin: NSView {
         AuthService.instance.loginUser(email: userNameTextField.stringValue,
                                        password: passwordTextField.stringValue) { success in
                                         if success {
-                                            let name = Notification.Name.closeModal
-                                            NotificationCenter.default.post(name: name,
-                                                                            object: nil)
-                                            Swift.print(AuthService.instance.authToken)
-                                            Swift.print(AuthService.instance.userEmail)
+                                            self.getUserInfo()
+                                        } else {
+                                            Swift.print("login error")
                                         }
         }
     }
@@ -68,6 +66,19 @@ class ModalLogin: NSView {
                                         userInfo: userInfoCreateAccount)
     }
     
+    func getUserInfo() {
+        AuthService.instance.findUser { success in
+            if success {
+                let name = Notification.Name.closeModal
+                NotificationCenter.default.post(name: name,
+                                                object: nil)
+                Swift.print(UserDataService.instance.name)
+                Swift.print(UserDataService.instance.avatarName)
+            } else {
+                Swift.print("Get user info error")
+            }
+        }
+    }
     
     func setupView() {
         self.view.frame = NSRect(x: 0,

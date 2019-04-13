@@ -15,6 +15,7 @@ let baseURL = "https://slack-clone-ski081.herokuapp.com/v1/"
 let urlRegister = "\(baseURL)account/register"
 let urlLogin = "\(baseURL)account/login"
 let urlUserAdd = "\(baseURL)user/add"
+let urlUserByEmail = "\(baseURL)user/byEmail"
 
 let chatPurple = NSColor(calibratedRed: 0.30,
                          green: 0.22,
@@ -33,6 +34,11 @@ let loggedInKey = "loggedIn"
 let userEmailKey = "userEmail"
 
 let serviceHeaders = [
+    "Content-Type": "application/json; charset=utf-8"
+]
+
+let bearerHeaders = [
+    "Authorization": "Bearer \(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]
 
