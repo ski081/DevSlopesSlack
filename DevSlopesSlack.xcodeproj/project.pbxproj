@@ -11,6 +11,8 @@
 		9901E4CA22600A51004752E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901E4C922600A51004752E8 /* User.swift */; };
 		9901E4CC22602343004752E8 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901E4CB22602343004752E8 /* UserDataService.swift */; };
 		9901E4CE2260277A004752E8 /* SlackUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901E4CD2260277A004752E8 /* SlackUser.swift */; };
+		9901E4D02262A564004752E8 /* ModalProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9901E4CF2262A564004752E8 /* ModalProfile.xib */; };
+		9901E4D22262A59F004752E8 /* ModalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901E4D12262A59F004752E8 /* ModalProfile.swift */; };
 		9912A12E2228B3B9006CA38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912A12D2228B3B9006CA38D /* AppDelegate.swift */; };
 		9912A1322228B3BA006CA38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9912A1312228B3BA006CA38D /* Assets.xcassets */; };
 		9912A1352228B3BA006CA38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9912A1332228B3BA006CA38D /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		9901E4C922600A51004752E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9901E4CB22602343004752E8 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		9901E4CD2260277A004752E8 /* SlackUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUser.swift; sourceTree = "<group>"; };
+		9901E4CF2262A564004752E8 /* ModalProfile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalProfile.xib; sourceTree = "<group>"; };
+		9901E4D12262A59F004752E8 /* ModalProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProfile.swift; sourceTree = "<group>"; };
 		9912A12A2228B3B9006CA38D /* DevSlopesSlack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevSlopesSlack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9912A12D2228B3B9006CA38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9912A1312228B3BA006CA38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				99A86B8F224FAEA1007048C0 /* ClickBlockingView.swift */,
 				99A86B9422506078007048C0 /* ModalLogin.swift */,
 				99A86B9822544C56007048C0 /* ModalCreateAccount.swift */,
+				9901E4D12262A59F004752E8 /* ModalProfile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				99A86B9222505FB7007048C0 /* ModalLogin.xib */,
 				99A86B9622544C34007048C0 /* ModalCreateAccount.xib */,
+				9901E4CF2262A564004752E8 /* ModalProfile.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 				9912A1322228B3BA006CA38D /* Assets.xcassets in Resources */,
 				99A86B9722544C34007048C0 /* ModalCreateAccount.xib in Resources */,
 				99A86B9322505FB7007048C0 /* ModalLogin.xib in Resources */,
+				9901E4D02262A564004752E8 /* ModalProfile.xib in Resources */,
 				9912A1352228B3BA006CA38D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +331,7 @@
 				9912A1452228B91A006CA38D /* ChatViewController.swift in Sources */,
 				9912A12E2228B3B9006CA38D /* AppDelegate.swift in Sources */,
 				99A86B8E224FA9D9007048C0 /* NotificationName+Custom.swift in Sources */,
+				9901E4D22262A59F004752E8 /* ModalProfile.swift in Sources */,
 				99A86B9922544C56007048C0 /* ModalCreateAccount.swift in Sources */,
 				99A86B90224FAEA1007048C0 /* ClickBlockingView.swift in Sources */,
 				9912A1472228BA1E006CA38D /* MainWindowController.swift in Sources */,

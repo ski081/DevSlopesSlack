@@ -9,4 +9,5 @@
 enum ModalType {
     case login
     case createAccount
+    case profile
 }

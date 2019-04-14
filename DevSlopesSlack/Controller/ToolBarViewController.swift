@@ -48,14 +48,25 @@ class ToolBarViewController: NSViewController {
     }
     
     @objc func openProfilePage(_ recognizer: NSClickGestureRecognizer) {
-        let loginDict: [String: ModalType] = [
-            userInfoModal: .login
-        ]
-        
         let notificationName = Notification.Name.presentModal
-        NotificationCenter.default.post(name: notificationName,
-                                        object: nil,
-                                        userInfo: loginDict)
+        if AuthService.instance.isLoggedIn {
+            let profileDict: [String: ModalType] = [
+                userInfoModal: .profile
+            ]
+            
+            NotificationCenter.default.post(name: notificationName,
+                                            object: nil,
+                                            userInfo: profileDict)
+            
+        } else {
+            let loginDict: [String: ModalType] = [
+                userInfoModal: .login
+            ]
+            
+            NotificationCenter.default.post(name: notificationName,
+                                            object: nil,
+                                            userInfo: loginDict)
+        }
     }
     
     @objc
@@ -127,6 +138,10 @@ class ToolBarViewController: NSViewController {
             modalHeight = 300
         case .createAccount:
             modalView = ModalCreateAccount()
+            modalWidth = 475
+            modalHeight = 300
+        case .profile:
+            modalView = ModalProfile()
             modalWidth = 475
             modalHeight = 300
         }
